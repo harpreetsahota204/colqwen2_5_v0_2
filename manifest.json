@@ -1,0 +1,32 @@
+{
+    "name": "colqwen2_5_v0_2",
+    "url": "https://github.com/harpreetsahota204/colqwen2_5_v0_2",
+    "models": [
+        {
+            "base_name": "vidore/colqwen2.5-v0.2",
+            "base_filename":"colqwen2.5-v0.2",
+            "author": "Vidore",
+            "license": "Apache 2.0",
+            "source": "https://huggingface.co/vidore/colqwen2.5-v0.2",
+            "description": "ColQwen is a model based on a novel model architecture and training strategy based on Vision Language Models (VLMs) to efficiently index documents from their visual features. It is a Qwen2.5-VL-3B extension that generates ColBERT- style multi-vector representations of text and images.",
+            "tags": [
+                "classification",
+                "logits",
+                "embeddings",
+                "torch",
+                "visual-document-retrieval",
+                "zero-shot"
+            ],
+            "date_added": "2025-10-15",
+            "requirements": {
+                "packages": ["huggingface-hub","transformers", "torch", "torchvision",  "ColQwen-engine"],
+                "cpu": {
+                    "support": true
+                },
+                "gpu": {
+                    "support": true
+                }
+            }
+        }
+   ]
+}
