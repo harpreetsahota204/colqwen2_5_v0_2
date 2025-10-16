@@ -19,7 +19,7 @@
             ],
             "date_added": "2025-10-15",
             "requirements": {
-                "packages": ["huggingface-hub","transformers", "torch", "torchvision",  "ColQwen-engine"],
+                "packages": ["huggingface-hub","transformers", "torch", "torchvision",  "colpali-engine"],
                 "cpu": {
                     "support": true
                 },
