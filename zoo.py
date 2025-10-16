@@ -192,7 +192,11 @@ class ColQwen(fout.TorchImageModel, fom.PromptMixin):
                 model_kwargs["torch_dtype"] = torch.bfloat16
             else:
                 model_kwargs["torch_dtype"] = torch.float16
-        
+
+        # Enable flash attention if available
+        if is_flash_attn_2_available():
+            model_kwargs["attn_implementation"] = "flash_attention_2"
+
         # Initialize processor
         self.processor = ColQwen2_5_Processor.from_pretrained(model_path)
         
