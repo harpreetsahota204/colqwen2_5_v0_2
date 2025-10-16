@@ -36,22 +36,15 @@ def load_model(model_name, model_path, **kwargs):
         a :class:`fiftyone.core.models.Model`
     """
 
-    if not model_path or not os.path.isdir(model_path):
-        raise ValueError(
-            f"Invalid model_path: '{model_path}'. Please ensure the model has been downloaded "
-            "using fiftyone.zoo.download_zoo_model(...)"
-        )
+    # Start with base configuration
+    config_dict = {
+        "model_path": model_path,
+    }
     
-    logger.info(f"Loading ColQwen model from {model_path}")
-
-    config_dict = dict(model_path=model_path)
+    #Merge all kwargs into config_dict
+    config_dict.update(kwargs)
     
-    # Add optional kwargs to config
-    if "pool_factor" in kwargs:
-        config_dict["pool_factor"] = kwargs["pool_factor"]
-    if "pooling_strategy" in kwargs:
-        config_dict["pooling_strategy"] = kwargs["pooling_strategy"]
-    
+    # Create config and model
     config = ColQwenConfig(config_dict)
     return ColQwen(config)
 
