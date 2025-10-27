@@ -1,5 +1,7 @@
 # ColQwen2.5-v0.2 for FiftyOne
 
+![image](colqwen_fo.gif)
+
 Integration of [ColQwen2.5-v0.2](https://huggingface.co/vidore/colqwen2.5-v0.2) as a FiftyOne Zoo Model for visual document retrieval.
 
 ## Overview
